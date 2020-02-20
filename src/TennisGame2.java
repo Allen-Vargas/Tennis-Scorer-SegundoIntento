@@ -31,7 +31,7 @@ public class TennisGame2 implements TennisGame
     }
 
 	private String normal3(String score) {
-		if (P2point>P1point && P2point < 4)
+		if (P1point!=P2point)
         {
 			score = getLiteral(P1point) + "-" + getLiteral(P2point);
         }
@@ -39,7 +39,7 @@ public class TennisGame2 implements TennisGame
 	}
 
 	private String normal2(String score) {
-		if (P1point>P2point && P1point < 4)
+		if (P1point!=P2point)
         {
 			score = getLiteral(P1point) + "-" + getLiteral(P2point);
         }
@@ -47,7 +47,7 @@ public class TennisGame2 implements TennisGame
 	}
 
 	private String normal1(String score) {
-		if (P2point > 0 && P1point==0)
+		if (P1point!=P2point)
         {
 			score = getLiteral(P1point) + "-" + getLiteral(P2point);
         }
@@ -55,7 +55,7 @@ public class TennisGame2 implements TennisGame
 	}
 
 	private String normal(String score) {
-		if (P1point > 0 && P2point==0)
+		if (P1point!=P2point)
         {
             score = getLiteral(P1point) + "-" + getLiteral(P2point);
         }
