@@ -27,8 +27,16 @@ public class TennisGame2 implements TennisGame
 		}
 		if (isDeuce())
 			score = "Deuce";
+		if (isInAdvantageOver(P1point, P2point))
+		{
+		    score = "Advantage player1";
+		}
 		
-        score = advantage(score);
+		if (isInAdvantageOver(P2point, P1point))
+		{
+		    score = "Advantage player2";
+		}
+		
 		if (isWinnerOver(P1point, P2point))
 		{
 		    score = "Win for player1";
@@ -62,17 +70,8 @@ public class TennisGame2 implements TennisGame
 		return firstPlayerPoints>=4 && secondtPlayerPoints>=0 && (firstPlayerPoints-secondtPlayerPoints)>=2;
 	}
 
-	private String advantage(String score) {
-		if (P1point > P2point && P2point >= 3)
-        {
-            score = "Advantage player1";
-        }
-        
-        if (P2point > P1point && P1point >= 3)
-        {
-            score = "Advantage player2";
-        }
-		return score;
+	private boolean isInAdvantageOver(int firstPlayerPoints, int secondtPlayerPoints) {
+		return firstPlayerPoints > secondtPlayerPoints && secondtPlayerPoints >= 3;
 	}
 
 	private boolean isTie() {
