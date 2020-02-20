@@ -29,7 +29,14 @@ public class TennisGame2 implements TennisGame
 			score = "Deuce";
 		
         score = advantage(score);
-        score = win(score);
+		if (isWinnerOver(P1point, P2point))
+		{
+		    score = "Win for player1";
+		}
+		if (isWinnerOver(P2point, P1point))
+		{
+		    score = "Win for player2";
+		}
         
         return score;
     }
@@ -51,16 +58,8 @@ public class TennisGame2 implements TennisGame
 		return result;
 	}
 
-	private String win(String score) {
-		if (P1point>=4 && P2point>=0 && (P1point-P2point)>=2)
-        {
-            score = "Win for player1";
-        }
-        if (P2point>=4 && P1point>=0 && (P2point-P1point)>=2)
-        {
-            score = "Win for player2";
-        }
-		return score;
+	private boolean isWinnerOver(int firstPlayerPoints, int secondtPlayerPoints) {
+		return firstPlayerPoints>=4 && secondtPlayerPoints>=0 && (firstPlayerPoints-secondtPlayerPoints)>=2;
 	}
 
 	private String advantage(String score) {
