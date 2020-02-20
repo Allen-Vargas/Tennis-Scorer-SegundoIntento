@@ -18,34 +18,19 @@ public class TennisGame2 implements TennisGame
         String score = "";
         
 		if (isNormal())
-		{
 		    score = getLiteral(P1point) + "-" + getLiteral(P2point);
-		}
 		if (isTie())
-		{
 		    score = getLiteral(P1point) + "-All";
-		}
 		if (isDeuce())
 			score = "Deuce";
 		if (isInAdvantageOver(P1point, P2point))
-		{
 		    score = "Advantage player1";
-		}
-		
 		if (isInAdvantageOver(P2point, P1point))
-		{
 		    score = "Advantage player2";
-		}
-		
 		if (isWinnerOver(P1point, P2point))
-		{
 		    score = "Win for player1";
-		}
 		if (isWinnerOver(P2point, P1point))
-		{
 		    score = "Win for player2";
-		}
-        
         return score;
     }
 
@@ -55,6 +40,7 @@ public class TennisGame2 implements TennisGame
 
 	private String getLiteral(int P1point2) {
 		String result="";
+		
 		if (P1point2==0)
 			result = "Love";
 		if (P1point2==1)
@@ -83,21 +69,13 @@ public class TennisGame2 implements TennisGame
 	}
     
     public void SetP1Score(int number){
-        
         for (int i = 0; i < number; i++)
-        {
-            P1Score();
-        }
-            
+            P1Score();      
     }
     
     public void SetP2Score(int number){
-        
         for (int i = 0; i < number; i++)
-        {
-            P2Score();
-        }
-            
+            P2Score();       
     }
     
     public void P1Score(){
